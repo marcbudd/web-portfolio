@@ -1,33 +1,35 @@
-console.log("hello world")
+console.log("hello world");
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM CONTENT LOADED")
-})
+    console.log("DOM CONTENT LOADED");
+
+    document.getElementById('addHobbyButton').addEventListener('click', addHobby);
+    document.getElementById('addExperienceButton').addEventListener('click', addExperience);
+
+});
 
 
 function addHobby() {
-    var hobbyInput = document.getElementById('hobbyInput');
-    var hobbiesList = document.getElementById('hobbiesList');
+    let hobbyInput = document.getElementById('hobbyInput');
+    let hobbiesList = document.getElementById('hobbiesList');
 
     if (hobbyInput.value !== '') {
-      var li = document.createElement('li');
-      li.appendChild(document.createTextNode(hobbyInput.value));
-      hobbiesList.appendChild(li);
+      let listElement = document.createElement('li');
+      listElement.textContent = hobbyInput.value;
+      hobbiesList.appendChild(listElement);
       hobbyInput.value = '';
     }
   }
 
   function addExperience() {
-    var experienceInput = document.getElementById('experienceInput');
-    var experiencesList = document.getElementById('experiencesList');
+    let experienceInput = document.getElementById('experienceInput');
+    let experiencesList = document.getElementById('experiencesList');
 
     if (experienceInput.value !== '') {
-      var li = document.createElement('li');
-      li.appendChild(document.createTextNode(experienceInput.value));
-      experiencesList.appendChild(li);
+      let listElement = document.createElement('li');
+      listElement.textContent = experienceInput.value;
+      experiencesList.appendChild(listElement);
       experienceInput.value = '';
     }
   }
 
-
-  
